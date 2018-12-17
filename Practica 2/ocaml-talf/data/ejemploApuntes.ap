@@ -1,0 +1,24 @@
+# Estados
+0 1 2 ;
+
+# Símbolos de entrada
+a b c;
+
+# Simbolos de pila
+zeta S a b c;
+
+# Estado inicial
+0;
+
+# Estados finales
+2;
+
+# Transiciones
+0 1 epsilon zeta S zeta;
+1 1 a a epsilon;
+1 1 b b epsilon;
+1 1 c c epsilon;
+1 1 epsilon S a S a;
+1 1 epsilon S b S b;
+1 1 epsilon S c;
+1 2 epsilon zeta zeta;

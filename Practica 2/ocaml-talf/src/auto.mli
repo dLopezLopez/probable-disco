@@ -1,13 +1,13 @@
 
 (*****************************************************************************
  *
- * auto.mli   Tipos predefinidos y operaciones básicas para las prácticas de
- *            Teoría de Autómatas y Lenguajes Formales.                     
+ * auto.mli   Tipos predefinidos y operaciones bï¿½sicas para las prï¿½cticas de
+ *            Teorï¿½a de Autï¿½matas y Lenguajes Formales.
  *
  *****************************************************************************)
 
 type simbolo =
-     Terminal of string 
+     Terminal of string
    | No_terminal of string;;
 
 (*****************************************************************************)
@@ -29,9 +29,9 @@ type arco_af =
 
 type af =
    Af of (estado Conj.conjunto *
-          simbolo Conj.conjunto * 
+          simbolo Conj.conjunto *
           estado *
-          arco_af Conj.conjunto * 
+          arco_af Conj.conjunto *
           estado Conj.conjunto);;
 
 (*****************************************************************************)
@@ -40,9 +40,9 @@ type regla_gic =
    Regla_gic of (simbolo * simbolo list);;
 
 type gic =
-   Gic of (simbolo Conj.conjunto * 
+   Gic of (simbolo Conj.conjunto *
            simbolo Conj.conjunto *
-           regla_gic Conj.conjunto * 
+           regla_gic Conj.conjunto *
            simbolo);;
 
 (*****************************************************************************)
@@ -50,7 +50,7 @@ type gic =
 type arco_ap =
    Arco_ap of (estado * estado * simbolo * simbolo * simbolo list);;
 
-type ap = 
+type ap =
    Ap of (estado Conj.conjunto * simbolo Conj.conjunto * simbolo Conj.conjunto *
           estado * arco_ap Conj.conjunto * simbolo * estado Conj.conjunto);;
 
@@ -77,10 +77,11 @@ val es_regular : gic -> bool;;
 val af_of_gic : gic -> af;;
 val gic_of_af : af -> gic;;
 
+val encaja : Auto.estado * Auto.simbolo list * Auto.simbolo list -> Auto.arco_ap -> Auto.estado * Auto.simbolo list * Auto.simbolo list ;;
+val es_conf_final : 'a Conj.conjunto -> 'a * 'b list * 'c -> bool;;
 val escaner_ap : simbolo list -> ap -> bool;;
 
 val escaner_mt : simbolo list -> mt -> bool;;
 val scpm : mt -> simbolo list -> (string * string) list;;
 
 (*****************************************************************************)
-
