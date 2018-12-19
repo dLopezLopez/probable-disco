@@ -77,7 +77,7 @@ val es_regular : gic -> bool;;
 val af_of_gic : gic -> af;;
 val gic_of_af : af -> gic;;
 
-val encaja : Auto.estado * Auto.simbolo list * Auto.simbolo list -> Auto.arco_ap -> Auto.estado * Auto.simbolo list * Auto.simbolo list ;;
+val encaja : estado * simbolo list * simbolo list -> arco_ap -> estado * simbolo list * simbolo list ;;
 val es_conf_final : 'a Conj.conjunto -> 'a * 'b list * 'c -> bool;;
 val escaner_ap : simbolo list -> ap -> bool;;
 
